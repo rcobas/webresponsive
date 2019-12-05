@@ -55,14 +55,27 @@
       <div class="contenedor-header">
         <h1>Rosa Cobas</h1>
         <h2>Formulario de contacto</h2>
-        <a href="mailto:info@translatingyou.net">info@translatingyou.net</a>
+        <a
+          href="mailto:info@translatingyou.net"
+          id="enlace"
+          onfocus="myFocusFunction();"
+          >info@translatingyou.net</a
+        >
       </div>
     </header>
     <section class="contenedor-ppal">
       <!-- Formulario de contacto -->
       <div class="form-contacto">
         <form method="post" action="mailto:info@translatingyou.net">
-          <p>
+          <div class="radio">
+            <input type="radio" class="radio-bt" name="genero" value="hombre" />
+            Sr.
+            <input
+              type="radio"
+              class="radio-bt"
+              name="genero"
+              value="mujer"
+            />Sra.
             <input
               type="text"
               id="nombre"
@@ -70,17 +83,19 @@
               placeholder="Nombre"
               required
             />
-          </p>
-          <p>
+          </div>
+          <div>
             <input
               type="email"
               id="email"
               name="email"
               placeholder="Email"
+              pattern="[A-Za-z0-9]+ \@ mail.com"
               required
             />
-          </p>
-          <p>
+          </div>
+
+          <div>
             <input
               type="text"
               id="asunto"
@@ -88,20 +103,32 @@
               placeholder="Asunto"
               required
             />
-          </p>
-          <p>
+          </div>
+          <div>
             <textarea
               id="mensaje"
               name="mensaje"
               placeholder="Mensaje"
+              maxlength="500"
               required
             ></textarea>
-          </p>
-          <p>
+          </div>
+          <div class="valoracion">
+            ¿Cómo valorarías la web?
+            <input
+              type="range"
+              class="valoracion"
+              name="valoracion"
+              min="1"
+              max="5"
+              step="1"
+            />
+          </div>
+          <div>
             <button type="submit" class="bt-enviar">
               Enviar mensaje
             </button>
-          </p>
+          </div>
         </form>
       </div>
     </section>

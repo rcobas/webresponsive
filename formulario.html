@@ -59,13 +59,26 @@
       <div class="contenedor-header">
         <h1>Rosa Cobas</h1>
         <h3>Solicita tu presupuesto</h3>
-        <a href="mailto:info@translatingyou.net">info@translatingyou.net</a>
+        <a
+          href="mailto:info@translatingyou.net"
+          id="enlace"
+          onfocus="myFocusFunction();"
+          >info@translatingyou.net</a
+        >
       </div>
     </header>
     <section class="contenedor-ppal">
       <div class="form-contacto">
         <form method="post" action="mailto:info@translatingyou.net">
-          <div>
+          <div class="radio">
+            <input type="radio" class="radio-bt" name="genero" value="hombre" />
+            Sr.
+            <input
+              type="radio"
+              class="radio-bt"
+              name="genero"
+              value="mujer"
+            />Sra.
             <input
               type="text"
               id="nombre"
@@ -80,6 +93,7 @@
               id="email"
               name="email"
               placeholder="Email"
+              pattern="[A-Za-z0-9]+ \@ mail.com"
               required
             />
           </div>
@@ -89,16 +103,32 @@
               id="telefono"
               name="telefono"
               placeholder="Teléfono"
+              pattern="[0-9]{8}"
               required
             />
           </div>
           <div>
             <select id="servicio" class="placeholder" required>
               <option class="placeholder" default>Servicio que desea</option>
-              <option>Traducción</option>
-              <option>Revisión</option>
-              <option>Página web/app</option>
+              <option value="traduccion">Traducción</option>
+              <option value="revision">Revisión</option>
+              <option value="web/app">Página web/app</option>
             </select>
+          </div>
+          <div>
+            <input
+              type="text"
+              id="idioma"
+              name="idioma"
+              list="listaidiomas"
+              placeholder="Idioma de origen"
+              value=""
+            />
+            <datalist id="listaidiomas">
+              <option value="Inglés"></option>
+              <option value="Alemán"></option>
+              <option value="Español"></option>
+            </datalist>
           </div>
           <div>
             <input
@@ -114,11 +144,32 @@
               id="mensaje"
               name="mensaje"
               placeholder="Mensaje"
+              maxlength="500"
               required
             ></textarea>
           </div>
           <div>
-            <button type="submit" class="bt-enviar">Enviar mensaje</button>
+            <input type="file" id="adjunto" />
+          </div>
+          <div class="radio">
+            <input
+              type="checkbox"
+              id="politica-privacidad"
+              name="politica-privacidad"
+              class="radio-bt"
+              value=""
+            />
+            <b>Acepto la política de privacidad.</b>
+          </div>
+          <div>
+            <button
+              type="submit"
+              id="bt-enviar"
+              class="bt-enviar"
+              onclick="mensajeEnviar();"
+            >
+              Enviar mensaje
+            </button>
           </div>
         </form>
       </div>

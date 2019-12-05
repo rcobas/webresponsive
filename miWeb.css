@@ -115,7 +115,16 @@ div {
   padding: 0 55px;
   display: block;
   margin: 5px 40px;
-  text-align: center;
+}
+.form-contacto input.radio-bt {
+  width: 4%;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+input.checkbox {
+  width: 4%;
+  display: block;
+  text-align: left;
 }
 .form-contacto input,
 .form-contacto textarea {
@@ -304,7 +313,7 @@ div.transbox p {
 .contenedor-noticias {
   display: block;
   height: 100%;
-  margin: 20px;
+  margin: 10px 20px;
   padding: 10px;
   font-size: 14px;
   text-align: justify;
@@ -331,6 +340,30 @@ div.tabla-horarios img {
 form > div {
   box-sizing: border-box;
   margin: 20px 0;
+}
+form div.radio {
+  font-size: 14px;
+  text-align: left;
+}
+input.valoracion {
+  width: 30%;
+  padding: 5px;
+  margin: 0 10px;
+  vertical-align: middle;
+}
+div.valoracion {
+  font-size: 14px;
+}
+
+div.buscador {
+  margin: 10px;
+  padding: 10px;
+  text-align: right;
+  font-size: 14px;
+  font-weight: bold;
+}
+div.buscador input {
+  margin-left: 20px;
 }
 @media (max-width: 468px) {
   .contenedor-img {
@@ -405,14 +438,18 @@ form > div {
     width: 100%;
   }
   div.transbox {
-    margin: 10px 10px;
+    margin: 0 0;
   }
   div.transbox p {
     font-size: 14px;
     text-align: center;
     margin: 0;
+    box-sizing: border-box;
   }
   div.contenedor-noticias span {
     font-size: 8px;
+  }
+  div.buscador {
+    font-size: 11px;
   }
 }
